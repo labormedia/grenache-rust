@@ -44,7 +44,7 @@ impl error::Error for Error {
     }
 }
 
-trait JsonPost {
+pub trait JsonPost {
     fn execute_post(url: &str, payload: &str) -> Result<Value> {
         let request = Self::create_json_post_request(url, payload)?;
         let response = Self::handle_request(request)?;
